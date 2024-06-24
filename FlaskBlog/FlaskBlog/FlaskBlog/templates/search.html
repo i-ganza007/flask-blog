@@ -1,0 +1,21 @@
+{%extends 'layout.html'%}
+{%block content%}
+{{super()}}
+<style>
+    h2{
+        border: 1px solid;
+        text-align: center;
+        width: 40%;
+        margin-inline: auto;
+    }
+</style>
+   {%for post in posts%}
+   <div class="container">
+    <h2 class="accordion-header">
+       <a href="{{ url_for('post',post_id=post.id) }}">{{post.title}}</a>
+    </h2>
+  </div>
+
+   {%endfor%}
+
+{%endblock%}
